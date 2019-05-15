@@ -55,50 +55,80 @@ export class DesignSystem {
     }
 
   
+    convertDocs(string){
+
+        //* # uc-side-drawer\n\n```javascript\n+ this will be highlighted in green\n+ this will be highlighted in red\nlet a = \"fd\"; let b = 5;\n\n```\n\n## Basic description\n\nThis is some text as a description. The question is if it's going to stay?\n\n## How to use it\n### Do this:\n- [x] Finish my changes\n- [X] Push my commits to **GitHub**\n- [X] Open a pull request\n\n### Don't do this:\n- [] bla bla bla\n- [] never do that\n\n\n|To do:| Not to do:|\n|------|-----------|\n|jkjl jkjk | jjiojo jiojo jiojoij|\n|  | jjlkjl|\n|```diff |\n|+ this will be highlighted in green |\n|- this will be highlighted in red |\n|``` |\n\n------------------\n\n### Do this:\n```diff\n+ this will be highlighted in green\n+ this will be highlighted in red\n```\n\n### Don't do this:\n```diff\n- this will be highlighted in green\n- this will be highlighted in red\n```\n\n
+
+
+        let test = string.match(/\n\s*(.*?)\s*\n/g, '--- replaced --');
+        console.log('test::::::::::::::::::::', test)
+
+        let res = string
+            // .replace(/\n/g, '<br>')
+            .replace(/\n\s*(.*?)\s*\n/g, '--- replaced --')
+            .replace(/### /g, '<h1>')
+            .replace(/## /g, '<h2>')
+            // .replace(/# /g, '<h1>');
+
+        console.log(res)
+    }
+
 
     appendContent = () => {
-
         console.log('displayDS = ', this.displayds)
         if (this.state.data.components.length > 0 && this.displayds) {
-            const parent = document.getElementById('componentsContainer')
+
+            const parent = document.getElementById('componentsContainer');
             parent.innerHTML = null;
 
             this.state.data.components.forEach(el => {
-                const tag = el.tag,
-                    template = document.createElement('template'),
-                    li = document.createElement('li'),
-                    newComponent = document.createElement(`${tag}`),
-                    tagTitle = document.createElement('h2'),
-                    desscription = document.createElement('p'),
-                    nodeDescription = document.createTextNode(el.readme),
-                    nodeTitle = document.createTextNode(`<${tag}>`);
+                const tag = el.tag
 
-                li.appendChild(tagTitle);
-                li.appendChild(desscription);
-                li.appendChild(newComponent);
-                tagTitle.appendChild(nodeTitle);
-                desscription.appendChild(nodeDescription);
-                template.appendChild(li);
+                //check if this is not ds tag
+                if (tag.search('ds-') === -1){
 
+                    const
+                        template = document.createElement('template'),
+                        li = document.createElement('li'),
+                        newComponent = document.createElement(`${tag}`),
+                        tagTitle = document.createElement('h2'),
+                        documentation = document.createElement('p'),
+                        nodeDescription = document.createTextNode(el.readme),
+                        nodeTitle = document.createTextNode(`<${tag}>`);
 
-                if (tag === 'uc-button') {
-                    console.log(el)
-                    const ifbutton = template.querySelector('uc-button');
-                    ifbutton.variant = "secondary";
+                        // console.log(el);
+                        this.convertDocs(el.readme);
 
-                    if (this.background !== 'white') {
-                        ifbutton.buttonlabel = 'switch of the background';
-                        ifbutton.variant = 'primary';
-                    } else {
-                        ifbutton.buttonlabel = 'change background color'
+                    li.appendChild(tagTitle);
+                    li.appendChild(documentation);
+                    li.appendChild(newComponent);
+                    tagTitle.appendChild(nodeTitle);
+                    documentation.appendChild(nodeDescription);
+                    template.appendChild(li);
+
+    
+                    if (tag === 'uc-button') {
+                        console.log(el)
+                        const ifbutton = template.querySelector('uc-button');
+                        ifbutton.variant = "secondary";
+    
+                        if (this.background !== 'white') {
+                            ifbutton.buttonlabel = 'switch of the background';
+                            ifbutton.variant = 'primary';
+                        } else {
+                            ifbutton.buttonlabel = 'change background color'
+                        }
+
+                        ifbutton.clicked = () => {
+                            this.changeBackgroundHandler();
+                        };
                     }
+    
+                    parent.appendChild(li);
 
-                    ifbutton.clicked = () => {
-                        this.changeBackgroundHandler();
-                    };
+
+
                 }
-
-                parent.appendChild(li);
             });
         }
     }
