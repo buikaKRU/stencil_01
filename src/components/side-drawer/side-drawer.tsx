@@ -69,7 +69,7 @@ export class SideDrawer {
     
     */
     @Prop() infoType: 'warning'|'success'|'information'|'critical' = 'information';
-  
+
 
 
       /**

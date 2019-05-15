@@ -1,5 +1,5 @@
 {
-  "timestamp": "2019-05-15T08:27:56",
+  "timestamp": "2019-05-15T10:49:39",
   "compiler": {
     "name": "@stencil/core",
     "version": "0.16.2",
@@ -8,10 +8,21 @@
   "components": [
     {
       "tag": "ds-design-system",
-      "readme": "# ds-design-system\n\n\n",
+      "readme": "# ds-design-system\r\n\r\n\r\n\r",
       "docs": "DESIGN SYSTEM main Component",
       "usage": {},
       "props": [
+        {
+          "name": "background",
+          "type": "string",
+          "mutable": true,
+          "attr": "background",
+          "reflectToAttr": true,
+          "docs": "This is state: background description",
+          "default": "'white'",
+          "optional": false,
+          "required": false
+        },
         {
           "name": "componentsList",
           "type": "any[]",
@@ -45,7 +56,7 @@
     },
     {
       "tag": "ds-system-list",
-      "readme": "# ds-design-system\n\n\n",
+      "readme": "# ds-design-system\r\n\r\n\r\n\r",
       "docs": "DESIGN SYSTEM list to display components",
       "usage": {},
       "props": [
@@ -72,7 +83,7 @@
     },
     {
       "tag": "uc-backdrop",
-      "readme": "# uc-backdrop\n\n##slots\n\nNo slots. Don't paste any content within tag\n",
+      "readme": "# uc-backdrop\r\n\r\n##slots\r\n\r\nNo slots. Don't paste any content within tag\r\n\r",
       "docs": "an Backdrop Atom. this is short description from over @Component decorator",
       "usage": {},
       "props": [
@@ -157,7 +168,7 @@
     },
     {
       "tag": "uc-button",
-      "readme": "# uc-button\n\n\n",
+      "readme": "# uc-button\r\n\r\n\r\n\r",
       "docs": "Button component to be used all across the project",
       "usage": {},
       "props": [
@@ -344,7 +355,7 @@
     },
     {
       "tag": "ds-app",
-      "readme": "# ds-app\n\n\n",
+      "readme": "# ds-app\r\n\r\n\r\n\r",
       "docs": "an App Page. this is short description from over @Component decorator",
       "usage": {},
       "props": [
@@ -372,7 +383,7 @@
     },
     {
       "tag": "snow-buggy",
-      "readme": "# snow-buggy\n\n\n",
+      "readme": "# snow-buggy\r\n\r\n\r\n\r",
       "docs": "Testing components th check out <slot> conditional rendering",
       "usage": {},
       "props": [
@@ -400,7 +411,7 @@
     },
     {
       "tag": "snow-rail-warning",
-      "readme": "# snow-rail\n\n\n",
+      "readme": "# snow-rail\r\n\r\n\r\n\r",
       "docs": "",
       "usage": {},
       "props": [
@@ -439,7 +450,7 @@
     },
     {
       "tag": "snow-rail",
-      "readme": "# snow-rail\n\n\n",
+      "readme": "# snow-rail\r\n\r\n\r\n\r",
       "docs": "",
       "usage": {},
       "props": [
@@ -478,7 +489,7 @@
     },
     {
       "tag": "snow-toast",
-      "readme": "# snow-toast\n\n\n",
+      "readme": "# snow-toast\r\n\r\n\r\n\r",
       "docs": "",
       "usage": {},
       "props": [

@@ -62,26 +62,30 @@ export class DesignSystem {
         if (this.state.data.components.length > 0 && this.displayds) {
             const parent = document.getElementById('componentsContainer')
             parent.innerHTML = null;
-            
+
             this.state.data.components.forEach(el => {
                 const tag = el.tag,
                     template = document.createElement('template'),
                     li = document.createElement('li'),
                     newComponent = document.createElement(`${tag}`),
                     tagTitle = document.createElement('h2'),
-                    node = document.createTextNode(`<${tag}>`);
+                    desscription = document.createElement('p'),
+                    nodeDescription = document.createTextNode(el.readme),
+                    nodeTitle = document.createTextNode(`<${tag}>`);
 
                 li.appendChild(tagTitle);
+                li.appendChild(desscription);
                 li.appendChild(newComponent);
-                tagTitle.appendChild(node);
+                tagTitle.appendChild(nodeTitle);
+                desscription.appendChild(nodeDescription);
                 template.appendChild(li);
-                
-    
+
 
                 if (tag === 'uc-button') {
+                    console.log(el)
                     const ifbutton = template.querySelector('uc-button');
                     ifbutton.variant = "secondary";
-                    
+
                     if (this.background !== 'white') {
                         ifbutton.buttonlabel = 'switch of the background';
                         ifbutton.variant = 'primary';
@@ -91,8 +95,7 @@ export class DesignSystem {
 
                     ifbutton.clicked = () => {
                         this.changeBackgroundHandler();
-                    }; 
-                    
+                    };
                 }
 
                 parent.appendChild(li);

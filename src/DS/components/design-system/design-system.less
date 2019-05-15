@@ -22,8 +22,18 @@ ds-design-system {
             padding: @padding-01*4 @padding-01*2;
             border-style: dashed;
     
-            h2 {
-                margin-bottom: @padding-01*2;
+            &>h2 {
+                font-size: 3rem;
+                opacity: 0.5;
+                margin-bottom: @padding-01;
+            }
+
+            &>p {
+                font-size: 1.2rem;
+                opacity: 0.6;
+                border-bottom: @border-01;
+                margin-bottom: @padding-01*4;
+
             }
         }
     }

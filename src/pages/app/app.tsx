@@ -45,7 +45,7 @@ export class App{
             this.sideBarVisible = false;
         }
 
-        
+
         
         return [
 
@@ -55,7 +55,7 @@ export class App{
                 clicked={openSideBarHandler}>
             </uc-button>,
 
-            <uc-side-drawer 
+            <uc-side-drawer
                 visible={this.sideBarVisible} 
                 open={this.sideBarVisible} 
                 title="test"
@@ -68,6 +68,8 @@ export class App{
                     </ul>
                 </nav>
             </uc-side-drawer>,
+
+
 
             <ds-design-system displayds={this.visibleds}></ds-design-system>,
 
