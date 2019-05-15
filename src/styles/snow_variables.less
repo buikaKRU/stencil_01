@@ -1,0 +1,387 @@
+
+
+
+@color-white: white;
+@color-gray: rgb(212, 212, 212);
+@color-blue: #61c0f3;
+
+@padding01: 1rem;
+@shadowBox01: 0 0 20px rgba(0, 0, 0, 0.3);
+
+@borderRadius01: 10px;
+
+
+
+
+
+
+
+
+
+/**
+ *
+ * GLOBAL COLOR VARIABLES
+ * These color variables are meant to be reused in objects, components and layouts. 
+ * Accessing a color should always be done by referencing the appropriate palette
+ * and then the key or index in the palette list. If a color needs to be tweaked
+ * or adjusted in any way, consider using another color or modify it with the built-in
+ * color functions lighten() or darken().
+ *
+ *
+ * CONTENTS:
+ *
+ * BRAND PALETTE
+ * Branding...............Brand colors used mostly for consistent branding purposes.
+ *
+ * PRIMARY PALETTE
+ * Primary................Palette with primary colors when needed.
+ *
+ * NEUTRAL PALETTE
+ * Neutral................Palette with neutral colors when needed.
+ *
+ * CHART PALETTE
+ * Charts.................Palette with data chart colors
+ *
+ * UTILITY PALETTE
+ * Utility................Palette with all general utility colors (borders, backgrounds etc.).
+ *
+ * CONTEXTUAL PALETTE
+ * Context................Palette with contextual colors used to convey meaning.
+ *
+ * TYPOGRAPHY PALETTE
+ * Text...................Palette with all typography colors.
+ *
+ * ALPHA PALETTE
+ * Transparency...........Palette with all transparent alpha colors.
+ *
+ * SHADOW PALETTE
+ * Utility..............Palette with all shadow alpha colors.
+ *
+ */
+
+
+
+
+/*------------------------------------------------------
+    BRAND PALETTE
+    Use this palette to access branding colors.
+    Example: at(@palette-brand, main);    
+-------------------------------------------------------*/
+@brand-main:#2FB1D3;
+@brand-green:#27B467;
+@brand-lightgreen:#C2DCD3;
+@brand-darkgreen:#477378;
+@brand-orange:#E58B1C;
+
+// Brand palette
+@palette-brand: main @brand-main, 
+              green @brand-green, 
+              lightgreen @brand-lightgreen, 
+              darkgreen @brand-darkgreen, 
+              orange @brand-orange;
+
+
+/*------------------------------------------------------
+    UI PALETTE - Will replace Primary & Neutral palette in future
+    Use this palette to access primary colors.
+    Example: at(@palette-ui, blue-dark);
+-------------------------------------------------------*/
+@ui-red-light:#FFE3E0; 		//Red Light
+@ui-red:#D62718; 			//Red
+@ui-red-dark:#A80115; 		//Red Dark
+
+@ui-green-light:#E4FBED; 	//Green Light
+@ui-green:#27B467; 			//Green
+@ui-green-dark:#037B41; 	//Green Dark
+
+@ui-blue-light:#DAEEFF; 	//Blue Light
+@ui-blue:#247BAB; 			//Blue
+@ui-blue-dark:#0C3957; 		//Blue Dark
+
+@ui-orange-light:#FAE3B6; 	//Orange Light
+@ui-orange:#FF6D00; 		//Orange
+@ui-orange-dark:#AD3502; 	//Orange Dark
+
+@ui-gray-darkest:#4C4C4C; 	//Darker Gray
+@ui-gray-dark:#707070; 		//Dark Gray
+@ui-gray:#D6D6D6; 			//Border
+@ui-gray-light:#EFEFEF; 	//Background
+@ui-gray-lightest:#F8F8F8;  //Lighter Background
+
+// UI palette
+@palette-ui: red-light @ui-red-light,
+             red @ui-red,
+             red-dark @ui-red-dark,
+
+             green-light @ui-green-light,
+             green @ui-green,
+             green-dark @ui-green-dark,
+
+             blue-light @ui-blue-light,
+			 blue @ui-blue,
+			 blue-dark @ui-blue-dark,
+
+			 orange-light @ui-orange-light,
+			 orange @ui-orange,
+			 orange-dark @ui-orange-dark,
+
+			 gray-darkest @ui-gray-darkest,
+			 gray-dark @ui-gray-dark,
+			 gray @ui-gray,
+			 gray-light @ui-gray-light,
+             gray-lightest @ui-gray-lightest;
+             
+
+
+/*------------------------------------------------------
+   TYPOGRAPHY PALETTE
+   Use this palette to access frequent utility colors.
+   Example: at(@palette-typography, text-dark);
+-------------------------------------------------------*/
+@text-dark: #292929;
+@text-light: #707070;
+
+@palette-typography: text-dark @text-dark,
+                     text-light @text-light;
+
+
+ /*------------------------------------------------------
+    PRIMARY PALETTE
+    Use this palette to access primary colors.
+    Example: at(@palette-primary, dark);
+-------------------------------------------------------*/
+@primary-light: #DAEEFF;
+@primary-medium: #008FC7;
+@primary-solid: #247BAB;
+@primary-strong: #395F96;
+@primary-dark: #0C3957;
+
+// Primary palette
+@palette-primary: light @primary-light, 
+                  medium @primary-medium,
+                  solid @primary-solid,
+                  strong @primary-strong, 
+                  dark @primary-dark;
+
+
+ /*------------------------------------------------------
+    NEUTRAL PALETTE
+    Use this palette to access neutral colors.
+    Example: at(@palette-neutral, solid);
+ -------------------------------------------------------*/
+@neutral-light: #F8F8F8;
+@neutral-medium: #EFEFEF;
+@neutral-solid: #D6D6D6;
+@neutral-base: #a7a7a7;
+@neutral-strong: #6E6E6E;
+@neutral-dark: #4C4C4C;
+
+// Neutral palette
+@palette-neutral: light @neutral-light, 
+                  medium @neutral-medium, 
+                  solid @neutral-solid, 
+                  base @neutral-base,
+                  strong @neutral-strong, 
+                  dark @neutral-dark;
+
+
+
+/*------------------------------------------------------
+    CHART PALETTE
+    Use this palette to access colors for data charts
+    Example: at(@palette-chart, orange-base);
+-------------------------------------------------------*/
+// Darkblue
+@cht-darkblue-base: #225378;
+@cht-darkblue-sub-one: #6486AD;
+@cht-darkblue-sub-two: #16364E;
+
+// Teal
+@cht-teal-base: #89CED0;
+@cht-teal-sub-one: #B8E2E3;
+@cht-teal-sub-two: #609192;
+
+// Orange
+@cht-orange-base: #EB7F00;
+@cht-orange-sub-one: #F2AB59;
+@cht-orange-sub-two: #A55900;
+
+// Yellow
+@cht-yellow-base: #EFD10A;
+@cht-yellow-sub-one: #F5E26C;
+@cht-yellow-sub-two: #B49C08;
+
+// Green
+@cht-green-base: #AAC822;
+@cht-green-sub-one: #C8DB6F;
+@cht-green-sub-two: #778C18;
+
+// Purple
+@cht-purple-base: #9F0AA4;
+@cht-purple-sub-one: #C060C4;
+@cht-purple-sub-two: #48054A;
+
+// Chart palette
+@palette-chart: darkblue-base @cht-darkblue-base,
+                darkblue-subsetone @cht-darkblue-sub-one,
+                darkblue-subsettwo @cht-darkblue-sub-two,
+                teal-base @cht-teal-base,
+                teal-subsetone @cht-teal-sub-one,
+                teal-subsettwo @cht-teal-sub-two,
+                orange-base @cht-orange-base,
+                orange-subsetone @cht-orange-sub-one,
+                orange-subsetwo @cht-orange-sub-two,
+                yellow-base @cht-yellow-base,
+                yellow-subsetone @cht-yellow-sub-one,
+                yellow-subsetwo @cht-yellow-sub-two,
+                green-base @cht-green-base,
+                green-subsetone @cht-green-sub-one,
+                green-subsetwo @cht-green-sub-two,
+                purple-base @cht-purple-base,
+                purple-subsetone @cht-purple-sub-one,
+                purple-subsetwo @cht-purple-sub-two;
+
+
+/*------------------------------------------------------
+   UTILITY PALETTE
+   Use this palette to access frequent utility colors.
+   Example: at(@palette-utility, border-default);
+-------------------------------------------------------*/
+@white: #FFF;
+@black: #000;
+@bg-hover-blue: lighten(@primary-solid, 55%);
+
+@palette-utility: white @white,
+                  black @black,
+                  border-default @neutral-solid,
+                  border-print @black,
+                  bg-hover @bg-hover-blue,
+                  bg-active @primary-solid,
+                  caret-grey @neutral-strong,
+                  caret-hover @primary-solid,
+                  table-header @neutral-light;
+                  
+
+/*------------------------------------------------------
+    CONTEXTUAL PALETTE
+    Use this palette to access colors with contextual
+    meaning.
+    Example: at(@palette-context, info-light);
+-------------------------------------------------------*/
+// Contextual palette
+@color-context-pro-base: #3CBB76;
+@color-context-pro-subsetOne: #8AD6AD;
+@color-context-pro-subsetTwo: #C4EAD6;
+
+@color-context-neutral-base: #C4DF4C;
+@color-context-neutral-subsetOne: #DCEC94;
+@color-context-neutral-subsetTwo: #E7F2B7;
+
+@color-context-risk-base: #FFA800;
+@color-context-risk-subsetOne: #FFCA66;
+@color-context-risk-subsetTwo:  #FFDC99;
+
+@color-context-con-base: #D86061;
+@color-context-con-subsetOne: #E48F90;
+@color-context-con-subsetTwo: #F3CFCF;
+
+@color-info-light: @primary-light;
+@color-info-middle: @primary-solid;
+@color-info-dark: @primary-dark;
+
+@color-warning-light: #FAE3B6;
+@color-warning-middle: #FF6D00;
+@color-warning-dark: #AD3502;
+
+@color-critical-light: #fddbd4;
+@color-critical-middle: #D62718;
+@color-critical-dark: #A80115;
+
+@color-success-light: #f0fff7;
+@color-success-middle: #27b467;
+@color-success-dark: #0a763b;
+
+// Context palette
+@palette-context: pro-base @color-context-pro-base,
+                  pro-subsetone @color-context-pro-subsetOne,
+                  pro-subsettwo @color-context-pro-subsetTwo,
+                  neutral-base @color-context-neutral-base,
+                  neutral-subsetone @color-context-neutral-subsetOne,
+                  neutral-subsettwo @color-context-neutral-subsetTwo,
+                  risk-base @color-context-risk-base,
+                  risk-subsetone @color-context-risk-subsetOne,
+                  risk-subsettwo @color-context-risk-subsetTwo,
+                  con-base @color-context-con-base,
+                  con-subsetone @color-context-con-subsetOne,
+                  con-subsettwo @color-context-con-subsetTwo,
+                  info-light @color-info-light,
+                  info-middle @color-info-middle,
+                  info-dark @color-info-dark,
+                  warning-light @color-warning-light,
+                  warning-middle @color-warning-middle,
+                  warning-dark @color-warning-dark,
+                  critical-light @color-critical-light,
+                  critical-middle @color-critical-middle,
+                  critical-dark @color-critical-dark,
+                  success-light @color-success-light,
+                  success-middle @color-success-middle,
+                  success-dark @color-success-dark;
+
+/*------------------------------------------------------
+    TYPOGRAPHY PALETTE
+    Use this palette to color text of different types.
+    Example: at(@palette-text, heading);
+-------------------------------------------------------*/
+@palette-text: copy @neutral-dark,
+               copy-light @white,
+               description @neutral-strong,
+               heading @neutral-dark,
+               label @neutral-dark,
+               value @neutral-strong,
+               link @primary-solid,
+               print @black;
+
+
+/*------------------------------------------------------
+    ALPHA PALETTE
+    Use this palette to set transparent backgrounds,
+    only accepts a number between 1 and 9. 1 for very 
+    light transparency, 9 for very strong.
+    Example: at(@palette-alpha, 1);
+-------------------------------------------------------*/
+@color-dark-alpha-10: rgba(99, 99, 99, .1);
+@color-dark-alpha-20: rgba(99, 99, 99, .2);
+@color-dark-alpha-30: rgba(99, 99, 99, .3);
+@color-dark-alpha-40: rgba(99, 99, 99, .4);
+@color-dark-alpha-50: rgba(99, 99, 99, .5);
+@color-dark-alpha-60: rgba(99, 99, 99, .6);
+@color-dark-alpha-70: rgba(99, 99, 99, .7);
+@color-dark-alpha-80: rgba(99, 99, 99, .8);
+@color-dark-alpha-90: rgba(99, 99, 99, .9);
+
+@palette-alpha: @color-dark-alpha-10,
+                @color-dark-alpha-20,
+                @color-dark-alpha-30,
+                @color-dark-alpha-40,
+                @color-dark-alpha-50,
+                @color-dark-alpha-60,
+                @color-dark-alpha-70,
+                @color-dark-alpha-80,
+                @color-dark-alpha-90;
+
+/*------------------------------------------------------
+    SHADOW PALETTE
+    Use this palette to access shadows in comination
+    with box-shadow
+    Example: at(@palette-shadow, light);
+-------------------------------------------------------*/
+@box-shadow-light: rgba(50, 50, 50, 0.1);
+@box-shadow-medium: rgba(50, 50, 50, 0.14);
+@box-shadow-strong: rgba(50, 50, 50, 0.18);
+
+@palette-shadow: light @box-shadow-light,
+                 medium @box-shadow-medium,
+                 strong @box-shadow-strong;
+
+
+

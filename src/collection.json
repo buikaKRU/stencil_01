@@ -1,0 +1,540 @@
+{
+  "timestamp": "2019-05-15T00:16:19",
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "0.16.2",
+    "typescriptVersion": "3.2.2"
+  },
+  "components": [
+    {
+      "tag": "ds-design-system",
+      "readme": "# ds-design-system\n\n\n",
+      "docs": "DESIGN SYSTEM main Component",
+      "usage": {},
+      "props": [
+        {
+          "name": "displayds",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "displayds",
+          "reflectToAttr": false,
+          "docs": "",
+          "default": "false",
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [
+        {
+          "name": "--color-black",
+          "annotation": "prop",
+          "docs": "black color"
+        }
+      ]
+    },
+    {
+      "tag": "ds-system-list",
+      "readme": "# ds-design-system\n\n\n",
+      "docs": "DESIGN SYSTEM list to display components",
+      "usage": {},
+      "props": [
+        {
+          "name": "data",
+          "type": "any",
+          "mutable": true,
+          "attr": "data",
+          "reflectToAttr": false,
+          "docs": "Main property to get the data",
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [
+        {
+          "name": "--color-black",
+          "annotation": "prop",
+          "docs": "black color"
+        }
+      ]
+    },
+    {
+      "tag": "uc-backdrop",
+      "readme": "# uc-backdrop\n\n##slots\n\nNo slots. Don't paste any content within tag\n",
+      "docs": "an Backdrop Atom. this is short description from over @Component decorator",
+      "usage": {},
+      "props": [
+        {
+          "name": "clicked",
+          "type": "any",
+          "mutable": false,
+          "attr": "clicked",
+          "reflectToAttr": false,
+          "docs": "Clicked event handler",
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "interactive",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "interactive",
+          "reflectToAttr": false,
+          "docs": "Interactivity: backdrop qould be weather blocking one or interactive one",
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "qa",
+          "type": "string",
+          "mutable": false,
+          "attr": "qa",
+          "reflectToAttr": false,
+          "docs": "QA required ID",
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "visible",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "visible",
+          "reflectToAttr": true,
+          "docs": "visbility",
+          "default": "false",
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "testMethodWithOutput",
+          "returns": {
+            "type": "string",
+            "docs": ""
+          },
+          "signature": "testMethodWithOutput(input: string) => string",
+          "parameters": [
+            {
+              "name": "input",
+              "type": "string",
+              "docs": "input description before"
+            }
+          ],
+          "docs": "Just for testing the inner component method with output.\nMethod returns an input string followed by Date.now() output"
+        },
+        {
+          "name": "visbilityToggle",
+          "returns": {
+            "type": "void",
+            "docs": ""
+          },
+          "signature": "visbilityToggle() => void",
+          "parameters": [],
+          "docs": ""
+        }
+      ],
+      "events": [],
+      "styles": [
+        {
+          "name": "--color-black",
+          "annotation": "prop",
+          "docs": "black color"
+        }
+      ]
+    },
+    {
+      "tag": "uc-button",
+      "readme": "# uc-button\n\n\n",
+      "docs": "Button component to be used all across the project",
+      "usage": {},
+      "props": [
+        {
+          "name": "buttonlabel",
+          "type": "string",
+          "mutable": true,
+          "attr": "buttonlabel",
+          "reflectToAttr": true,
+          "docs": "Button Label (required)",
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "clicked",
+          "type": "(event: MouseEvent) => void",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "A callback function to be passed on clicking the button",
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "ghoust",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "ghoust",
+          "reflectToAttr": true,
+          "docs": "Visual variant atribute",
+          "default": "false",
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "\"primary\" | \"secondary\"",
+          "mutable": true,
+          "attr": "variant",
+          "reflectToAttr": true,
+          "docs": "Visual variant atribute. Handled by css class",
+          "default": "'primary'",
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "doSomething",
+          "returns": {
+            "type": "any",
+            "docs": ""
+          },
+          "signature": "doSomething(arg?: any) => any",
+          "parameters": [
+            {
+              "name": "arg",
+              "type": "any",
+              "docs": ""
+            }
+          ],
+          "docs": ""
+        }
+      ],
+      "events": [],
+      "styles": [
+        {
+          "name": "--border-01",
+          "annotation": "prop",
+          "docs": "border for the button"
+        },
+        {
+          "name": "--color-black",
+          "annotation": "prop",
+          "docs": "black color"
+        },
+        {
+          "name": "--local-height",
+          "annotation": "prop",
+          "docs": "height of the button"
+        },
+        {
+          "name": "--padding-01",
+          "annotation": "prop",
+          "docs": "standard pading"
+        }
+      ]
+    },
+    {
+      "tag": "uc-side-drawer",
+      "readme": "# uc-side-drawer\n\n```javascript\n+ this will be highlighted in green\n+ this will be highlighted in red\nlet a = \"fd\"; let b = 5;\n\n```\n\n## Basic description\n\nThis is some text as a description. The question is if it's going to stay?\n\n## How to use it\n### Do this:\n- [x] Finish my changes\n- [X] Push my commits to **GitHub**\n- [X] Open a pull request\n\n### Don't do this:\n- [] bla bla bla\n- [] never do that\n\n\n|To do:| Not to do:|\n|------|-----------|\n|jkjl jkjk | jjiojo jiojo jiojoij|\n|  | jjlkjl|\n|```diff |\n|+ this will be highlighted in green |\n|- this will be highlighted in red |\n|``` |\n\n------------------\n\n### Do this:\n```diff\n+ this will be highlighted in green\n+ this will be highlighted in red\n```\n\n### Don't do this:\n```diff\n- this will be highlighted in green\n- this will be highlighted in red\n```\n\n",
+      "docs": "THIS is a component short description. You can write w few words here.\r\nIt will not show up in autogenerated 'readme.md'\r\nBut it will showu up in autogenerated json \r\n---------\r\n```json\r\n * \"snowDesignSystem\": {\r\n *  \"version\": \"fdaf\",\r\n *  \"versions\": [\r\n *      {\"variant\": \"01\", \"ghoust\"}\r\n *  ]\r\n * }\r\n * ```",
+      "usage": {},
+      "props": [
+        {
+          "name": "infoType",
+          "type": "\"critical\" | \"information\" | \"success\" | \"warning\"",
+          "mutable": false,
+          "attr": "info-type",
+          "reflectToAttr": false,
+          "docs": "The atribute should have one of following values:\r\n\r\n**'information'**((default) only for 'information);\r\n\r\n**'warning'** (for warning notification);\r\n\r\n**'critical'** (for super important stuff)",
+          "default": "'information'",
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "open",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "open",
+          "reflectToAttr": true,
+          "docs": "Property responsible for opening/closing of the sidebar",
+          "default": "false",
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "sideDrawerClosing",
+          "type": "() => any",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Method to be executed while sideBar is being closed (Example: a method changing sideBar's parent state responsible for opening)",
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "test",
+          "type": "string",
+          "mutable": false,
+          "attr": "test",
+          "reflectToAttr": false,
+          "docs": "## Just testing of documentation creation\r\nUse the package manager [pip](https://pip.pypa.io/en/stable/) to **`install`** foobar.",
+          "default": "'information'",
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "mutable": true,
+          "attr": "title",
+          "reflectToAttr": true,
+          "docs": "The title of the element",
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "visible",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "visible",
+          "reflectToAttr": true,
+          "docs": "Setting for the conent display. \r\n**false** - no content\r\n**true**  - content\r\nComponent opening is handled by atribute 'open' which is handled by css",
+          "default": "false",
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "doNothing",
+          "returns": {
+            "type": "any",
+            "docs": "The arg parameter you specified or undefined."
+          },
+          "signature": "doNothing(arg?: any) => any",
+          "parameters": [
+            {
+              "name": "arg",
+              "type": "any",
+              "docs": "A parameter that will not be used."
+            }
+          ],
+          "docs": "A method that doesn't do anything. Just here because we are playing with\r\nautomatic documentation generation."
+        }
+      ],
+      "events": [],
+      "styles": [
+        {
+          "name": "--color-black",
+          "annotation": "prop",
+          "docs": "black color"
+        }
+      ]
+    },
+    {
+      "tag": "ds-app",
+      "readme": "# ds-app\n\n\n",
+      "docs": "an App Page. this is short description from over @Component decorator",
+      "usage": {},
+      "props": [
+        {
+          "name": "visibleds",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "visibleds",
+          "reflectToAttr": true,
+          "docs": "visbility",
+          "default": "false",
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [
+        {
+          "name": "--color-black",
+          "annotation": "prop",
+          "docs": "black color"
+        }
+      ]
+    },
+    {
+      "tag": "snow-buggy",
+      "readme": "# snow-buggy\n\n\n",
+      "docs": "Testing components th check out <slot> conditional rendering",
+      "usage": {},
+      "props": [
+        {
+          "name": "visible",
+          "type": "number",
+          "mutable": true,
+          "attr": "visible",
+          "reflectToAttr": true,
+          "docs": "",
+          "default": "1",
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [
+        {
+          "name": "--color-black",
+          "annotation": "prop",
+          "docs": "black color"
+        }
+      ]
+    },
+    {
+      "tag": "snow-rail-warning",
+      "readme": "# snow-rail\n\n\n",
+      "docs": "",
+      "usage": {},
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": true,
+          "attr": "label",
+          "reflectToAttr": true,
+          "docs": "",
+          "default": "'warning'",
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "visible",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "visible",
+          "reflectToAttr": true,
+          "docs": "",
+          "default": "true",
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [
+        {
+          "name": "--color-black",
+          "annotation": "prop",
+          "docs": "black color"
+        }
+      ]
+    },
+    {
+      "tag": "snow-rail",
+      "readme": "# snow-rail\n\n\n",
+      "docs": "",
+      "usage": {},
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": true,
+          "attr": "label",
+          "reflectToAttr": true,
+          "docs": "",
+          "default": "'information'",
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "visible",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "visible",
+          "reflectToAttr": true,
+          "docs": "",
+          "default": "true",
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [
+        {
+          "name": "--color-black",
+          "annotation": "prop",
+          "docs": "black color"
+        }
+      ]
+    },
+    {
+      "tag": "snow-toast",
+      "readme": "# snow-toast\n\n\n",
+      "docs": "",
+      "usage": {},
+      "props": [
+        {
+          "name": "actionlink",
+          "type": "string",
+          "mutable": true,
+          "attr": "actionlink",
+          "reflectToAttr": true,
+          "docs": "",
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "actionname",
+          "type": "string",
+          "mutable": true,
+          "attr": "actionname",
+          "reflectToAttr": false,
+          "docs": "",
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "mutable": true,
+          "attr": "message",
+          "reflectToAttr": true,
+          "docs": "",
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "mutable": true,
+          "attr": "variant",
+          "reflectToAttr": true,
+          "docs": "",
+          "default": "'information'",
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "visible",
+          "type": "number",
+          "mutable": true,
+          "attr": "visible",
+          "reflectToAttr": true,
+          "docs": "",
+          "default": "0",
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [
+        {
+          "name": "--color-black",
+          "annotation": "prop",
+          "docs": "black color"
+        }
+      ]
+    }
+  ]
+}

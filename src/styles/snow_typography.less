@@ -1,0 +1,120 @@
+/*------------------------------------
+    BASE STYLING FOR TYPOGRAPHY 2019
+------------------------------------*/
+//Base styles for heading, paragraphs, anchors and spans
+h1, h2, h3, h4, h5, h6, p, a, span {
+    font-family: @font-family;
+    line-height: 1.4;
+}
+
+//Set color for headings
+h1, h2, h3, h4, h5, h6 {
+    color: at(@palette-typography, text-dark);
+    font-weight: normal;
+}
+//Pageheader & Titlebar - 28px
+h1 {
+    font-size: 1.75rem;
+}
+//Page title - 24px
+h2 {
+    font-size: 1.5rem;
+}
+//Secondary page title - 18px
+h3 {
+    font-size: 1.125rem;
+}
+//Body text - 14px
+p {
+    font-size: .875rem;
+    color: at(@palette-typography, text-light);
+    //Spans inside of <p> should generally follow the same font-size and color, if not, explicitly set styles will override the inherits below
+    span {
+        font-size: inherit;
+        color: inherit;
+    }
+}
+//Caption text - 12px
+.t-caption {
+    font-size: .75rem;
+}
+//Link text
+.t-link {
+    color: at(@palette-text, link);
+    // Interactive states
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+        color: @ui-blue-dark;
+    }
+    &:active {
+        color: at(@palette-ui, red);
+    }
+}
+//Setting text to darker
+.t-dark {
+    color: at(@palette-typography, text-dark);
+}
+//Setting text to bold
+.t-bold {
+    font-weight: 600;
+}
+//Making text lighter
+.t-light {
+    font-weight: 300;
+}
+//Center text
+.t-center {
+    text-align: center;
+}
+
+// .o-Text-heading {
+//     color: at(@palette-text, heading);
+//     font-weight: 400;
+//     line-height: 1.25;
+//     margin: 0;
+// }
+
+// .o-Text-heading-one {
+//     font-size: 1.425rem;
+// }
+// .o-Text-heading-two {
+//     font-size: 1.325rem;
+// }
+// .o-Text-heading-three {
+//     font-size: 1.225rem;
+// }
+// .o-Text-heading-four {
+//     font-size: 1.125rem;
+// }
+// .o-Text-heading-five {
+//     font-size: 1.025rem;
+// }
+// .o-Text-heading-six {
+//     font-size: .925rem;
+// }
+
+// .o-Text-copy {
+//     margin: 0;
+// }
+
+// .o-Text-description {
+//     color: at(@palette-text, description);
+// }
+
+// .o-Text-marginbottom-none {
+//     margin-bottom: 0;
+// }
+
+// Utility for hiding text but still making it accessible for screen readers
+.u-VisuallyHidden {
+    position: absolute !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    text-transform: none !important;
+}

@@ -1,0 +1,126 @@
+.snow-toast_container {
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    padding-top: 0;
+
+    display: flex;
+    flex-direction: column-reverse;
+
+    &>snow-toast {
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+}
+
+
+snow-toast {
+        @utility-gray-medium: #707070; //main background color
+        @heightMin: 4.5rem; //minimal height of the toast
+    overflow: hidden;
+
+    transition: opacity 0.5s, max-height 0.5s, margin-top 1s;
+
+
+
+    * ,* &{
+        //transition: 3.5s all;
+    }
+
+    &[visible="1"] {
+        margin-top: 1rem;
+        max-height: 200px;
+        opacity: 1;
+    }
+
+    &[visible="0"] {
+        max-height: 0;
+        margin-top: 0;
+        opacity: 0;
+
+    }
+
+    .c-Toast {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        min-height: @heightMin;
+        width: 314px;
+
+        background: @utility-gray-medium;
+        border-radius: 0.3rem;
+        overflow: hidden;
+
+        // ELEMENTS
+        ////////
+        &_Content {
+            &:extend(p);
+            display: flex;
+            align-items: center;
+            color: @color-white;
+            padding: 0.5rem 2rem 0.5rem 1rem;
+        }
+
+        &_Icon {
+            min-width: @heightMin;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &_CloseButton{
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: transparent;
+            border: none;
+            height: 30px;
+            width: 30px;
+            border-radius: 100%;
+            cursor: pointer;
+
+            &:hover {
+                svg{
+                    fill: red;
+                }
+            }
+        }
+
+
+        // MODIFIERS
+        ////////
+        &-information {
+            .c-Toast_Icon {
+                background: @primary-solid;
+            }
+        }
+
+        &-warning {
+            .c-Toast_Icon {
+                background: @color-warning-middle;
+            }
+        }
+
+        &-success {
+            .c-Toast_Icon {
+                background: @color-success-middle;
+            }
+        }
+
+        &-critical {
+            .c-Toast_Icon {
+                background: @color-critical-middle;
+            }
+        }
+
+    }
+
+
+    svg {
+        fill: @color-white;
+    }
+}

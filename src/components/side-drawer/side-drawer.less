@@ -1,0 +1,61 @@
+
+
+
+uc-side-drawer,
+:host {
+
+    .uc-SideDrawer{
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        box-sizing: border-box;
+        width: 30rem;
+        max-width: 80%;
+        height: 100%;
+
+        padding: 2rem;
+        padding-left: 4rem;
+        padding-top: 10vh;
+        padding-top: 10vh;
+        padding: 10vh 2rem 10vh 4rem;
+
+        background: @color-white;
+        box-shadow: @shadow-box-01;
+        border-right: @border-02;
+
+        left: -100%;
+        transition: all 1s;
+
+        h1{
+            font-size: 2rem;
+            margin-top: 0;
+        }
+
+        aside {
+            height: 100%;
+        }
+
+        uc-button {
+            button {
+                min-width: 100px;
+            }
+        }
+
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li{
+                font-size: 1rem;
+                line-height: 1.5rem;
+            }
+        }
+    }
+}
+
+:host([open]){
+    .uc-SideDrawer {
+        left: 0;
+    }
+}

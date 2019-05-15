@@ -1,0 +1,74 @@
+
+
+uc-button {
+    /** @prop --border-01: border for the button */
+    /** @prop --padding-01: standard pading */
+
+    &[ghoust]{
+        opacity: 0.5;
+    }
+
+
+    & + uc-button {
+        margin-left: @padding-01;
+    }
+
+    .uc-Button {
+
+        [ghoust] &{
+            opacity: 0.25;
+        }
+        
+        .focus-01();
+        .animate-01();
+
+            /** @prop --local-height: height of the button*/
+            @local-height: 3rem;
+
+        font-size: 1rem;
+        box-sizing: border-box;
+        height: @local-height;
+        padding: 0 @padding-01;
+        margin: @padding-01 0;
+        border: @border-01;
+        border-radius: @local-height;
+        cursor: pointer;
+
+
+        //VARIANTS
+        &-Secondary {
+            background: @color-white;
+            color: @color-black;
+    
+            &:hover {
+                box-shadow: @border-shadow-01, @shadow-box-02;
+            }
+        }
+
+        &-Primary {
+            background:  @color-black;
+            color: @color-white;
+    
+            &:hover {
+                box-shadow: @border-shadow-01, @shadow-box-02;
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+
+
+a {
+    .focus-01();
+
+    color: @color-black;
+
+
+    &:hover {
+        background: @color-black;
+        color: @color-white;
+
+        
+    }
+}

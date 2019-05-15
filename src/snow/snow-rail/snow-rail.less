@@ -1,0 +1,193 @@
+/*
+*
+* Namespace: c (component)
+* Module: Rail
+* Description: Main module for Rail used in a global context
+*/
+
+//-------------------------------------------------------
+// -Module
+//-------------------------------------------------------
+.c-Rail {
+    margin: 1rem 0rem;
+    transition: 1s all;
+    * ,* &{
+        transition: 0.5s all;
+    }
+
+    &-hidden {
+        opacity: 0;
+    }
+
+    svg {
+        fill: @color-white;
+    }
+}
+
+//-------------------------------------------------------
+// _Components
+//-------------------------------------------------------
+.c-Rail_Item {
+    display: flex;
+    // FALLBACK - For older browsers
+    .no-flexbox & {
+        display: table;
+        width: 100%;
+    }
+}
+// VARIANTS - Based on context types
+.c-Rail_Item-information {
+    background-color: @primary-light;
+}
+.c-Rail_Item-warning {
+    background-color: @color-warning-light;
+}
+.c-Rail_Item-critical {
+    background-color: @color-critical-light;
+}
+.c-Rail_Item-success {
+    background-color: @color-success-light;
+}
+
+.c-Rail_Icon {
+    flex: 0 0 auto;
+    color: @color-white;
+    min-height: 3rem;
+    min-width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // FALLBACK - For older browsers
+    .no-flexbox & {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+    // OVERRIDES - Based on context types
+    .c-Rail_Item-information & {
+        background-color: @primary-solid;
+    }
+    .c-Rail_Item-warning & {
+        background-color: @color-warning-middle;
+    }
+    .c-Rail_Item-critical & {
+        background-color: @color-critical-middle;
+    }
+    .c-Rail_Item-success & {
+        background-color: @color-success-middle;
+    }
+}
+
+.c-Rail_Label {
+    width: 5rem;
+}
+
+.c-Rail_Label, .c-Rail_List {
+    align-self: center;
+    padding: 0 0rem 0 1.5rem;
+    list-style: none;
+    // FALLBACK - For older browsers
+    .no-flexbox & {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    // OVERRIDES - Based on context types
+    .c-Rail_Item-information & {
+        * {
+            color: @primary-solid;
+            &:before {
+                background: @primary-solid;
+            }
+        }
+
+
+    }
+    .c-Rail_Item-warning & {
+        * {
+            color: @color-warning-dark;
+            &:before {
+                background: @color-warning-dark;
+            }
+        }
+    }
+    .c-Rail_Item-critical & {
+        * {
+            color: @color-critical-middle;
+            &:before {
+                background: @color-critical-middle;
+            }
+        }
+    }
+    .c-Rail_Item-success & {
+        * {
+            color: @color-success-dark;
+            &:before {
+                background: @color-success-dark;
+            }
+        }
+    }
+}
+
+.c-Rail_LabelText {
+    margin: 0;
+}
+
+.c-Rail_List {
+    align-self: center;
+    &:extend(p);
+
+    // FALLBACK - For older browsers
+    .no-flexbox & {
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+    }
+}
+
+.c-Rail_ListItem {
+    float: left;
+    margin: 0 1rem 0 0;
+    &:before {
+        content: "";
+        display: inline-block;
+        height: 6px;
+        width: 6px;
+        border-radius: 50%;
+        margin: 0 .4rem 0 0;
+        position: relative;
+        top: -2px;
+    }
+
+    a {
+        //TODO: change to variable
+        margin-left: 0.5rem;
+
+        &:hover {
+            color: @text-dark;
+        }
+    }
+
+
+
+    // OVERRIDES - Based on context types
+    .c-Rail_Item-info & {
+        &:before {
+            background-color: @color-info-middle;
+        }
+    }
+    .c-Rail_Item-warning & {
+        &:before {
+            background-color: @color-warning-middle;
+        }
+    }
+    .c-Rail_Item-critical & {
+        &:before {
+            background-color: @color-critical-middle;
+        }
+    }
+    .c-Rail_Item-success & {
+        &:before {
+            background-color: @color-success-dark;
+        }
+    }
+}
