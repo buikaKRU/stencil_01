@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property    | Attribute   | Description | Type      | Default |
-| ----------- | ----------- | ----------- | --------- | ------- |
-| `displayds` | `displayds` |             | `boolean` | `false` |
+| Property         | Attribute   | Description | Type      | Default     |
+| ---------------- | ----------- | ----------- | --------- | ----------- |
+| `componentsList` | --          |             | `any[]`   | `undefined` |
+| `displayds`      | `displayds` |             | `boolean` | `false`     |
 
 
 ## CSS Custom Properties

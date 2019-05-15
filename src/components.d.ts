@@ -13,10 +13,18 @@ import '@stencil/core';
 export namespace Components {
 
   interface DsDesignSystem {
+    /**
+    * This is state: background description
+    */
+    'background': string;
     'componentsList': any[];
     'displayds': boolean;
   }
   interface DsDesignSystemAttributes extends StencilHTMLAttributes {
+    /**
+    * This is state: background description
+    */
+    'background'?: string;
     'componentsList'?: any[];
     'displayds'?: boolean;
   }

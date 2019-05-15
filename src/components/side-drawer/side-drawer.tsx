@@ -127,7 +127,7 @@ export class SideDrawer {
                         </uc-button>
                     </header>
                     <main>   
-                        <slot /** this is test slot description*/ name="inner_slot"/>
+                        <slot /** this is test slot description which doesn't work*/ name="inner_slot"/>
                     </main>
                 </aside>
             )

@@ -24,8 +24,22 @@ export class DesignSystem {
         }, 
         ui: {}
     };
+
+
+    /** This is state: background description */
+    @Prop({mutable: true, reflectToAttr: true}) background = 'white';
     
 
+
+    changeBackgroundHandler= () => {
+        if (this.background === 'white') {
+            this.background = 'gray';
+        } else {
+            this.background = 'white';
+        }
+        console.log(`*** button clicked with changed STATE color: ${this.background}`); 
+
+    }
 
     /**Fetching for collection.json file */
     readTextFile = (file, callback) => {
@@ -66,11 +80,21 @@ export class DesignSystem {
 
                 if (tag === 'uc-button') {
                     const ifbutton = template.querySelector('uc-button');
-                    ifbutton.buttonlabel = 'ifbuton generated';
-                    ifbutton.clicked = () => alert('button cicked');
                     ifbutton.variant = "secondary";
+                    
+                    if (this.background !== 'white') {
+                        ifbutton.buttonlabel = 'switch of the background';
+                        ifbutton.variant = 'primary';
+                    } else {
+                        ifbutton.buttonlabel = 'change background color'
+                    }
+
+                    ifbutton.clicked = () => {
+                        this.changeBackgroundHandler();
+                    }; 
+                    
                 }
-                
+
                 parent.appendChild(li);
             });
         }
@@ -103,6 +127,10 @@ export class DesignSystem {
 
 
     render() {
+        
+        
+
+        
 
         // const htmlToElement = (html) => {
         //     var template = document.createElement('template');
@@ -211,14 +239,15 @@ export class DesignSystem {
         
         
         console.log('---render', this.state.data);
-
+        console.log('STATE color', this.background);
+        // this.el.style.background = this.background;
 
         
         return [
             <h6>[ds-design-system]</h6>,
             <h1>DESIGN SYSTEM</h1>,
 
-            <ul id="componentsContainer">
+            <ul id="componentsContainer" class={`bckg_${this.background}`}>
             
             </ul>,
 

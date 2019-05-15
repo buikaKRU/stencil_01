@@ -3,9 +3,17 @@
 
 ds-design-system {
 
+    display: block;
+
     &>ul {
         list-style-type: none;
         padding: 0;
+
+        &.bckg_gray{
+            &>li {
+                background: fade(gray, 20%);
+            }
+        }
 
         &>li{
             border: @border-01;
@@ -24,4 +32,6 @@ ds-design-system {
     &>h1 {
         font-size: 3rem;
     }
+
+
 }
