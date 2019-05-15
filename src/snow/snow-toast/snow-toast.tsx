@@ -90,8 +90,6 @@ export class SnowRail {
             </svg>
         }
 
-        console.log('this toaster ', this.variant, ' is visible = ', this.visible)
-
         if (this.variant !== 'critical') {
             setTimeout(()=>{
                 this.visible = 0;

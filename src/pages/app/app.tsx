@@ -27,7 +27,6 @@ export class App{
     render() {
 
         const openSideBarHandler = () => {
-            console.log(this.sideBarVisible);
             this.sideBarVisible = !this.sideBarVisible;
             // const sd = document.querySelector('uc-side-drawer');
             // sd.open = true;
@@ -41,7 +40,6 @@ export class App{
         
 
         const anatherTestFunction = () => {
-            console.log('lets close this shig')
             this.sideBarVisible = false;
         }
 

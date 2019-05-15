@@ -37,7 +37,6 @@ export class DesignSystem {
         } else {
             this.background = 'white';
         }
-        console.log(`*** button clicked with changed STATE color: ${this.background}`); 
 
     }
 
@@ -59,23 +58,72 @@ export class DesignSystem {
 
         //* # uc-side-drawer\n\n```javascript\n+ this will be highlighted in green\n+ this will be highlighted in red\nlet a = \"fd\"; let b = 5;\n\n```\n\n## Basic description\n\nThis is some text as a description. The question is if it's going to stay?\n\n## How to use it\n### Do this:\n- [x] Finish my changes\n- [X] Push my commits to **GitHub**\n- [X] Open a pull request\n\n### Don't do this:\n- [] bla bla bla\n- [] never do that\n\n\n|To do:| Not to do:|\n|------|-----------|\n|jkjl jkjk | jjiojo jiojo jiojoij|\n|  | jjlkjl|\n|```diff |\n|+ this will be highlighted in green |\n|- this will be highlighted in red |\n|``` |\n\n------------------\n\n### Do this:\n```diff\n+ this will be highlighted in green\n+ this will be highlighted in red\n```\n\n### Don't do this:\n```diff\n- this will be highlighted in green\n- this will be highlighted in red\n```\n\n
 
+        
+        let seth3 = [];
+        seth3 = string.match(/### \s*(.*?)\s*\n/g);
+        let seth3modified = [];
+        if (seth3){
+            seth3modified = seth3.map(str => {
+               return str.replace(/### /g, '<h3>').replace(/\n/g, '</h3>');
+            });
+            seth3.forEach((el, i)=> {
+                let newstring = string.replace(el, seth3modified[i])
+                string = newstring;
+            })
+        }
+        let seth2 = [];
+        seth2 = string.match(/##\s*(.*?)\s*\n/g);
+        let seth2modified = [];
+        if (seth2){
+            seth2modified = seth2.map(str => {
+               return str.replace(/##/g, '<h2>').replace(/\n/g, '</h2>');
+            });
+            console.log('seth2modified = ', seth2modified);
+            seth2.forEach((el, i)=> {
+                let newstring = string.replace(el, seth2modified[i])
+                string = newstring;
+            })
+        }
+        let seth1 = [];
+        seth1 = string.match(/# \s*(.*?)\s*\n/g);
+        let seth1modified = [];
+        if (seth1){
+            seth1modified = seth1.map(str => {
+               return str.replace(/# /g, '<h1>').replace(/\n/g, '</h1>');
+            });
+            seth1.forEach((el, i)=> {
+                let newstring = string.replace(el, seth1modified[i])
+                string = newstring;
+            })
+        }
 
-        let test = string.match(/\n\s*(.*?)\s*\n/g, '--- replaced --');
-        console.log('test::::::::::::::::::::', test)
+        let code1 = [];
+        code1 = string.match(/```diff \s*(.*?)\s*```/g);
+        let code1modified = [];
+        if (code1){
+            code1modified = code1.map(codestr => {
+               return codestr.replace(/```diff /g, '<code>').replace(/```/g, '</code>');
+            });
+            code1.forEach((el, i)=> {
+                let newstring = string.replace(el, code1modified[i])
+                string = newstring;
+            })
+        }
+
+
 
         let res = string
-            // .replace(/\n/g, '<br>')
-            .replace(/\n\s*(.*?)\s*\n/g, '--- replaced --')
-            .replace(/### /g, '<h1>')
-            .replace(/## /g, '<h2>')
-            // .replace(/# /g, '<h1>');
-
-        console.log(res)
+            .replace(/```diff\n/g, '<code>')
+             .replace(/```javascript\n/g, '<code>')
+             .replace(/```\n/g, '</code>')
+             .replace(/\n\n/g, '<br>')
+             .replace(/\n/g, '<br>')
+        return res
     }
 
 
     appendContent = () => {
-        console.log('displayDS = ', this.displayds)
+    
         if (this.state.data.components.length > 0 && this.displayds) {
 
             const parent = document.getElementById('componentsContainer');
@@ -92,23 +140,28 @@ export class DesignSystem {
                         li = document.createElement('li'),
                         newComponent = document.createElement(`${tag}`),
                         tagTitle = document.createElement('h2'),
-                        documentation = document.createElement('p'),
-                        nodeDescription = document.createTextNode(el.readme),
+                        documentation = document.createElement('div'),
+                        container = document.createElement('div'),
+                        
+                        // nodeDescription = document.createTextNode(el.readme),
                         nodeTitle = document.createTextNode(`<${tag}>`);
 
                         // console.log(el);
-                        this.convertDocs(el.readme);
-
+                        // this.convertDocs(el.readme);
+                        
+                    documentation.classList.add('documentation');
+                    container.classList.add('container');
                     li.appendChild(tagTitle);
                     li.appendChild(documentation);
-                    li.appendChild(newComponent);
+                    container.appendChild(newComponent);
+                    li.appendChild(container);
                     tagTitle.appendChild(nodeTitle);
-                    documentation.appendChild(nodeDescription);
+                    // documentation.appendChild(nodeDescription);
+                    documentation.innerHTML =  this.convertDocs(el.readme)
                     template.appendChild(li);
 
-    
+
                     if (tag === 'uc-button') {
-                        console.log(el)
                         const ifbutton = template.querySelector('uc-button');
                         ifbutton.variant = "secondary";
     
@@ -119,15 +172,16 @@ export class DesignSystem {
                             ifbutton.buttonlabel = 'change background color'
                         }
 
+                        console.log('returnshit', ifbutton.returnShit())
                         ifbutton.clicked = () => {
                             this.changeBackgroundHandler();
+                            console.log('returnshit', ifbutton.returnShit())
                         };
                     }
+
+
     
                     parent.appendChild(li);
-
-
-
                 }
             });
         }
@@ -144,6 +198,7 @@ export class DesignSystem {
             //usage of readTextFile()
             this.readTextFile(jsonPath, (text) => {
                 var data = JSON.parse(text);
+                console.log(`${data}`)
                 let componentsData = data.components;
                 const newStateData = {...this.state.data}
                 const newState = {...this.state}
@@ -161,119 +216,6 @@ export class DesignSystem {
 
     render() {
         
-        
-
-        
-
-        // const htmlToElement = (html) => {
-        //     var template = document.createElement('template');
-        //     html = html.trim(); // Never return a text node of whitespace as the result
-        //     template.innerHTML = html;
-
-        //     // template.querySelector
-
-        //     return template.content.firstChild;
-        // }
-
-
-
-        // const componentsToDisplay = () => {
-            
-            
-        
-        //     if (this.state.data.components.length > 0) {
-
-        //         document.getElementById('testId').innerHTML = null;
-
-        //         // let parent = document.createElement('div');
-
-                
-        //         this.state.data.components.map((el, i) => {
-        //             const tag = el.tag
-        //             console.log('tag = ', tag);
-        
-        //             const newWeb = document.createElement(`${tag}`);
-
-        //             newWeb.setAttribute('buttonlabel', `button - ${i} -`);
-
-
-        //             console.log(newWeb);
-                    
-
-
-        //             document.getElementById('testId').appendChild(newWeb);
-
-        //             const parent = document.getElementById('testId');
-        //             console.log('perent', parent);
-
-        //             const ifbutton = document.querySelectorAll('uc-button');
-        //             console.log('ifbutton' , ifbutton);
-        //             ifbutton.forEach(el => {
-        //                 el.clicked = ()=> {
-        //                     console.log(el.buttonlabel)
-        //                 }
-        //             })
-
-
-
-
-
-
-
-
-
-
-
-        //             // const generatedButton = htmlToElement(`<uc-button buttonlabel="button ${i}"></uc-button>`),
-        //             // div = htmlToElement('<div><span>nested</span> <span>stuff</span></div>')
-        //             // console.log(generatedButton, div)
-        //             // document.getElementById('testId').appendChild(generatedButton);
-
-                    
-
-        //             // document.getElementById('testId').insertAdjacentHTML('beforeend', `<${tag} id="two">two</${tag}>`);
-
-        //             // var xmlString = "<div id='foo'><a href='#'>Link</a><span></span></div>";
-        //             // let doc = new DOMParser().parseFromString(xmlString, "text/xml");
-                    
-        //             // console.log('doc is ======== ', doc)
-
-                    
-        //         });
-           
-        //     } else {
-        //         return null;
-        //     }
-
-        // }
-
-
-
-        // const componentToDisplay = (tag) => {
-        //     var template = document.createElement('template');
-        //     const newComponent = document.createElement(`${tag}`);
-
-        //     template.appendChild(newComponent);
-
-        //     console.log('template   =     ', template.firstChild)
-
-        //     const ifbutton = template.querySelector('uc-button');
-        //     ifbutton.buttonlabel = 'ifbuton'
-        //     console.log('ifbutton = ', ifbutton)
-
-
- 
-
-
-        //     return () => nejsx;
-
-        // }
-
-        
-        
-        console.log('---render', this.state.data);
-        console.log('STATE color', this.background);
-        // this.el.style.background = this.background;
 
         
         return [

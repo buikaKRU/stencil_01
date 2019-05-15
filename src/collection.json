@@ -1,5 +1,5 @@
 {
-  "timestamp": "2019-05-15T10:49:39",
+  "timestamp": "2019-05-15T22:56:50",
   "compiler": {
     "name": "@stencil/core",
     "version": "0.16.2",
@@ -8,7 +8,7 @@
   "components": [
     {
       "tag": "ds-design-system",
-      "readme": "# ds-design-system\r\n\r\n\r\n\r",
+      "readme": "# ds-design-system\n\n\n",
       "docs": "DESIGN SYSTEM main Component",
       "usage": {},
       "props": [
@@ -56,7 +56,7 @@
     },
     {
       "tag": "ds-system-list",
-      "readme": "# ds-design-system\r\n\r\n\r\n\r",
+      "readme": "# ds-design-system\n\n\n",
       "docs": "DESIGN SYSTEM list to display components",
       "usage": {},
       "props": [
@@ -83,7 +83,7 @@
     },
     {
       "tag": "uc-backdrop",
-      "readme": "# uc-backdrop\r\n\r\n##slots\r\n\r\nNo slots. Don't paste any content within tag\r\n\r",
+      "readme": "# uc-backdrop\n\n##slots\n\nNo slots. Don't paste any content within tag\n",
       "docs": "an Backdrop Atom. this is short description from over @Component decorator",
       "usage": {},
       "props": [
@@ -168,7 +168,7 @@
     },
     {
       "tag": "uc-button",
-      "readme": "# uc-button\r\n\r\n\r\n\r",
+      "readme": "# uc-button\n\n\n## Basic description\n\nThis is some text as a description. The question is if it's going to stay? The button has a few properties like 'variant' and 'ghoust' and to pas a callback function for clicking it\n\n## How to use it\n\n### Do this:\n```diff\n+ this will be highlighted in green\n+ this will be highlighted in red\n```\n\n### Don't do this:\n```diff\n- this will be highlighted in green\n- this will be highlighted in red\n```\n\n",
       "docs": "Button component to be used all across the project",
       "usage": {},
       "props": [
@@ -188,6 +188,17 @@
           "mutable": true,
           "reflectToAttr": false,
           "docs": "A callback function to be passed on clicking the button",
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "Visual variant atribute",
+          "default": "false",
           "optional": false,
           "required": false
         },
@@ -229,6 +240,16 @@
               "docs": ""
             }
           ],
+          "docs": ""
+        },
+        {
+          "name": "returnShit",
+          "returns": {
+            "type": "string",
+            "docs": ""
+          },
+          "signature": "returnShit() => string",
+          "parameters": [],
           "docs": ""
         }
       ],
@@ -355,7 +376,7 @@
     },
     {
       "tag": "ds-app",
-      "readme": "# ds-app\r\n\r\n\r\n\r",
+      "readme": "# ds-app\n\n\n",
       "docs": "an App Page. this is short description from over @Component decorator",
       "usage": {},
       "props": [
@@ -383,7 +404,7 @@
     },
     {
       "tag": "snow-buggy",
-      "readme": "# snow-buggy\r\n\r\n\r\n\r",
+      "readme": "# snow-buggy\n\n\n",
       "docs": "Testing components th check out <slot> conditional rendering",
       "usage": {},
       "props": [
@@ -411,7 +432,7 @@
     },
     {
       "tag": "snow-rail-warning",
-      "readme": "# snow-rail\r\n\r\n\r\n\r",
+      "readme": "# snow-rail\n\n\n",
       "docs": "",
       "usage": {},
       "props": [
@@ -450,7 +471,7 @@
     },
     {
       "tag": "snow-rail",
-      "readme": "# snow-rail\r\n\r\n\r\n\r",
+      "readme": "# snow-rail\n\n\n",
       "docs": "",
       "usage": {},
       "props": [
@@ -489,7 +510,7 @@
     },
     {
       "tag": "snow-toast",
-      "readme": "# snow-toast\r\n\r\n\r\n\r",
+      "readme": "# snow-toast\n\n\n",
       "docs": "",
       "usage": {},
       "props": [

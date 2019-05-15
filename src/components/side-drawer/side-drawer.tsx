@@ -85,26 +85,20 @@ export class SideDrawer {
     };
 
     public onCloseDrawer = () => {
-        console.log('trying to close', this.el)
         this.visible = false;
         this.el.removeAttribute('open');
         this.sideDrawerClosing();
     }
 
     render() {
-        console.log(this.el)
         let content;
 
         this.infoType = 'success';
 
         const testBackdropMethod = () => {  
             const backdrop = this.el.querySelector('uc-backdrop')
-            const backdrop2 = document.getElementById('uc-test')
-            console.log('test')
-            console.log('element', backdrop);
-            console.log('element2', backdrop2)
+
             if (backdrop) {
-                console.log('backdrop', backdrop)
                 backdrop.testMethodWithOutput('from button')
             }
         }

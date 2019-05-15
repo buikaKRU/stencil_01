@@ -93,11 +93,16 @@ export namespace Components {
     * A callback function to be passed on clicking the button
     */
     'clicked': (event: MouseEvent) => void;
+    /**
+    * Visual variant atribute
+    */
+    'disabled': boolean;
     'doSomething': (arg?: any) => any;
     /**
     * Visual variant atribute
     */
     'ghoust': boolean;
+    'returnShit': () => string;
     /**
     * Visual variant atribute. Handled by css class
     */
@@ -112,6 +117,10 @@ export namespace Components {
     * A callback function to be passed on clicking the button
     */
     'clicked'?: (event: MouseEvent) => void;
+    /**
+    * Visual variant atribute
+    */
+    'disabled'?: boolean;
     /**
     * Visual variant atribute
     */
