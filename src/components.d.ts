@@ -31,26 +31,26 @@ export namespace Components {
 
   interface DsSystemList {
     /**
-    * Main property to get the data
+    * This is state: background description
     */
-    'data': any;
+    'background': string;
+    /**
+    * Main property to get and store the data
+    */
+    'wcDataProp': any;
   }
   interface DsSystemListAttributes extends StencilHTMLAttributes {
     /**
-    * Main property to get the data
+    * This is state: background description
     */
-    'data'?: any;
+    'background'?: string;
+    /**
+    * Main property to get and store the data
+    */
+    'wcDataProp'?: any;
   }
 
   interface UcBackdrop {
-    /**
-    * Clicked event handler
-    */
-    'clicked': any;
-    /**
-    * Interactivity: backdrop qould be weather blocking one or interactive one
-    */
-    'interactive': false;
     /**
     * QA required ID
     */
@@ -64,16 +64,12 @@ export namespace Components {
     * visbility
     */
     'visible': boolean;
-  }
-  interface UcBackdropAttributes extends StencilHTMLAttributes {
     /**
     * Clicked event handler
     */
-    'clicked'?: any;
-    /**
-    * Interactivity: backdrop qould be weather blocking one or interactive one
-    */
-    'interactive'?: false;
+    'wcClicked': (event: MouseEvent) => void;
+  }
+  interface UcBackdropAttributes extends StencilHTMLAttributes {
     /**
     * QA required ID
     */
@@ -82,6 +78,10 @@ export namespace Components {
     * visbility
     */
     'visible'?: boolean;
+    /**
+    * Clicked event handler
+    */
+    'wcClicked'?: (event: MouseEvent) => void;
   }
 
   interface UcButton {

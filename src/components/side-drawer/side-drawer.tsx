@@ -133,7 +133,11 @@ export class SideDrawer {
             <div class="uc-SideDrawer">
                 {content}
             </div>,
-            <uc-backdrop id='uc-test'qa="qa-12345" visible={this.visible}></uc-backdrop>
+            <uc-backdrop 
+                id='uc-test'
+                qa="qa-12345" 
+                visible={this.visible}
+                wcClicked={this.onCloseDrawer}></uc-backdrop>
         ]
     }
 }

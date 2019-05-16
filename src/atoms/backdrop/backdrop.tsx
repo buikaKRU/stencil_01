@@ -20,14 +20,11 @@ export class Backdrop {
     /**visbility */
     @Prop({mutable: true, reflectToAttr: true}) visible = false;
 
-    /**Interactivity: backdrop qould be weather blocking one or interactive one */
-    @Prop() interactive: false;
-
     /**QA required ID */
     @Prop() qa!: string;
 
     /** Clicked event handler*/
-    @Prop() clicked: any;
+    @Prop() wcClicked: (event: MouseEvent) => void;
     // (MouseEvent) => void;
     
 
@@ -53,6 +50,6 @@ export class Backdrop {
 
     render() {
         const classes = `uc-Backdrop ${!this.visible ? 'uc-Backdrop-hidden' : ''}`;
-        return <div class={classes} onClick={this.clicked}><slot name="test"></slot></div>
+        return <div class={classes} onClick={this.wcClicked}><slot name="test"></slot></div>
     }
 }

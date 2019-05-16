@@ -1,27 +1,46 @@
 
 
 
-ds-design-system {
+ds-system-list {
+
+    display: block;
 
     &>ul {
         list-style-type: none;
         padding: 0;
 
+        &.bckg_gray{
+            &>li>.container {
+                background: fade(gray, 20%);
+            }
+        }
+
         &>li{
             border: @border-01;
             // background: fade(@color-black, 5%);
-            margin: @padding-01*2 0;
-            padding: @padding-01;
+            margin: @padding-01*4 0;
+            padding: 0;
             border-style: dashed;
+
+            &>.documentation {
+                padding: @padding-01*4;
+                padding-top: @padding-01*2;
+                border-bottom: @border-01;
+                border-bottom-style: dashed;
+            }
+
+            &>.container {
+                padding: @padding-01*4;
+            }
     
-            h2 {
-                margin-bottom: @padding-01*2;
+            &>h2 {
+                padding: @padding-01*4;
+                padding-bottom: 0;
+                font-size: 3rem;
+                opacity: 0.5;
+                margin-bottom: @padding-01;
             }
         }
     }
 
-
-    &>h1 {
-        font-size: 3rem;
-    }
 }
