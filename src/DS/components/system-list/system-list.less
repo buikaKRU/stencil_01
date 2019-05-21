@@ -17,10 +17,12 @@ ds-system-list {
 
         &>li{
             border: @border-01;
+            border-radius: 40px;
             // background: fade(@color-black, 5%);
             margin: @padding-01*4 0;
             padding: 0;
             border-style: dashed;
+            overflow: hidden;
 
             &>.documentation {
                 padding: @padding-01*4;
@@ -31,16 +33,27 @@ ds-system-list {
 
             &>.container {
                 padding: @padding-01*4;
+                display: flex;
+                justify-content: center;
+
             }
     
             &>h2 {
-                padding: @padding-01*4;
-                padding-bottom: 0;
+                padding: @padding-01*2 @padding-01*4;
                 font-size: 3rem;
-                opacity: 0.5;
                 margin-bottom: @padding-01;
+                background: @color-black;
+                color: @color-white;
             }
         }
+    }
+
+}
+
+
+.documentation {
+    &>h1{
+        display: none;
     }
 
 }

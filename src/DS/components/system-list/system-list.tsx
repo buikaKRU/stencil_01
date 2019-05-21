@@ -1,5 +1,5 @@
 import { Component, Element, Prop } from '@stencil/core';
-
+import showdown from 'showdown';
 
 
 /** DESIGN SYSTEM list to display components
@@ -29,8 +29,9 @@ export class DSListItem {
         } else {
             this.background = 'white';
         }
-
     }
+
+    converter = new showdown.Converter()
 
 
 
@@ -39,66 +40,68 @@ export class DSListItem {
         //* # uc-side-drawer\n\n```javascript\n+ this will be highlighted in green\n+ this will be highlighted in red\nlet a = \"fd\"; let b = 5;\n\n```\n\n## Basic description\n\nThis is some text as a description. The question is if it's going to stay?\n\n## How to use it\n### Do this:\n- [x] Finish my changes\n- [X] Push my commits to **GitHub**\n- [X] Open a pull request\n\n### Don't do this:\n- [] bla bla bla\n- [] never do that\n\n\n|To do:| Not to do:|\n|------|-----------|\n|jkjl jkjk | jjiojo jiojo jiojoij|\n|  | jjlkjl|\n|```diff |\n|+ this will be highlighted in green |\n|- this will be highlighted in red |\n|``` |\n\n------------------\n\n### Do this:\n```diff\n+ this will be highlighted in green\n+ this will be highlighted in red\n```\n\n### Don't do this:\n```diff\n- this will be highlighted in green\n- this will be highlighted in red\n```\n\n
 
         
-        let seth3 = [];
-        seth3 = string.match(/### \s*(.*?)\s*\n/g);
-        let seth3modified = [];
-        if (seth3){
-            seth3modified = seth3.map(str => {
-               return str.replace(/### /g, '<h3>').replace(/\n/g, '</h3>');
-            });
-            seth3.forEach((el, i)=> {
-                let newstring = string.replace(el, seth3modified[i])
-                string = newstring;
-            })
-        }
-        let seth2 = [];
-        seth2 = string.match(/##\s*(.*?)\s*\n/g);
-        let seth2modified = [];
-        if (seth2){
-            seth2modified = seth2.map(str => {
-               return str.replace(/##/g, '<h2>').replace(/\n/g, '</h2>');
-            });
-            console.log('seth2modified = ', seth2modified);
-            seth2.forEach((el, i)=> {
-                let newstring = string.replace(el, seth2modified[i])
-                string = newstring;
-            })
-        }
-        let seth1 = [];
-        seth1 = string.match(/# \s*(.*?)\s*\n/g);
-        let seth1modified = [];
-        if (seth1){
-            seth1modified = seth1.map(str => {
-               return str.replace(/# /g, '<h1>').replace(/\n/g, '</h1>');
-            });
-            seth1.forEach((el, i)=> {
-                let newstring = string.replace(el, seth1modified[i])
-                string = newstring;
-            })
-        }
+        // let seth3 = [];
+        // seth3 = string.match(/### \s*(.*?)\s*\n/g);
+        // let seth3modified = [];
+        // if (seth3){
+        //     seth3modified = seth3.map(str => {
+        //        return str.replace(/### /g, '<h3>').replace(/\n/g, '</h3>');
+        //     });
+        //     seth3.forEach((el, i)=> {
+        //         let newstring = string.replace(el, seth3modified[i])
+        //         string = newstring;
+        //     })
+        // }
+        // let seth2 = [];
+        // seth2 = string.match(/##\s*(.*?)\s*\n/g);
+        // let seth2modified = [];
+        // if (seth2){
+        //     seth2modified = seth2.map(str => {
+        //        return str.replace(/##/g, '<h2>').replace(/\n/g, '</h2>');
+        //     });
+        //     console.log('seth2modified = ', seth2modified);
+        //     seth2.forEach((el, i)=> {
+        //         let newstring = string.replace(el, seth2modified[i])
+        //         string = newstring;
+        //     })
+        // }
+        // let seth1 = [];
+        // seth1 = string.match(/# \s*(.*?)\s*\n/g);
+        // let seth1modified = [];
+        // if (seth1){
+        //     seth1modified = seth1.map(str => {
+        //        return str.replace(/# /g, '<h1>').replace(/\n/g, '</h1>');
+        //     });
+        //     seth1.forEach((el, i)=> {
+        //         let newstring = string.replace(el, seth1modified[i])
+        //         string = newstring;
+        //     })
+        // }
 
-        let code1 = [];
-        code1 = string.match(/```diff \s*(.*?)\s*```/g);
-        let code1modified = [];
-        if (code1){
-            code1modified = code1.map(codestr => {
-               return codestr.replace(/```diff /g, '<code>').replace(/```/g, '</code>');
-            });
-            code1.forEach((el, i)=> {
-                let newstring = string.replace(el, code1modified[i])
-                string = newstring;
-            })
-        }
+        // let code1 = [];
+        // code1 = string.match(/```diff \s*(.*?)\s*```/g);
+        // let code1modified = [];
+        // if (code1){
+        //     code1modified = code1.map(codestr => {
+        //        return codestr.replace(/```diff /g, '<code>').replace(/```/g, '</code>');
+        //     });
+        //     code1.forEach((el, i)=> {
+        //         let newstring = string.replace(el, code1modified[i])
+        //         string = newstring;
+        //     })
+        // }
 
 
 
-        let res = string
-            .replace(/```diff\n/g, '<code>')
-             .replace(/```javascript\n/g, '<code>')
-             .replace(/```\n/g, '</code>')
-             .replace(/\n\n/g, '<br>')
-             .replace(/\n/g, '<br>')
-        return res
+        // let res = string
+        //     .replace(/```diff\n/g, '<code>')
+        //      .replace(/```javascript\n/g, '<code>')
+        //      .replace(/```\n/g, '</code>')
+        //      .replace(/\n\n/g, '<br>')
+        //      .replace(/\n/g, '<br>')
+
+        
+        return this.converter.makeHtml(string) 
     }
 
 
@@ -176,13 +179,9 @@ export class DSListItem {
 
 
     render() {
-
-        
         return [
             <h6>[ds-system-list]</h6>,
-
             <ul id="componentsContainer" >
-            
             </ul>
         ]
     }
@@ -195,7 +194,6 @@ export class DSListItem {
     componentDidLoad() {
         console.log('system-list wcDataProp = ', this.wcDataProp)
         this.appendContent()
-
     }
 }
 
