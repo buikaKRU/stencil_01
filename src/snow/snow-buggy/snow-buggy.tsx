@@ -20,6 +20,11 @@ export class MyComponent {
         if (this.visible === 1) {
             return (
                 <div class="buggy_container">
+                <p>
+                  <svg><use href="assets/images/test.svg#circle"></use></svg>
+                  <svg><use href="assets/images/test.svg#ellipse"></use></svg>
+                  <svg><use href="assets/images/svgstoreicons.svg#trash"></use></svg>
+                </p>
                     <h1>the buggy component</h1>
                     <slot></slot>
                 </div>

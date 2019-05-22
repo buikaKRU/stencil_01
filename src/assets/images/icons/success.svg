@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="icon-validation-success" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" xml:space="preserve">
+	<title>validation-success</title>
+	<g id="Layer 2" style="fill:#fff;">
+		<path d="M8 1a7 7 0 1 1-7 7 7 7 0 0 1 7-7m0-1a8 8 0 1 0 8 8 8 8 0 0 0-8-8zM7 11.17L3.87 8l1-1L7 9.19l4.13-4.11 1 1z" id="Layer 1">
+		</path>
+	</g>
+</svg>

@@ -208,6 +208,15 @@ export namespace Components {
     'visible'?: number;
   }
 
+  interface SnowIcon {
+    'wcVariant': 'arrow-up'|'bookmark'|'calendar'|'check-list'|'check'|'circled-check'|'clock-incomplete'
+    |'info'|'warning'|'success';
+  }
+  interface SnowIconAttributes extends StencilHTMLAttributes {
+    'wcVariant'?: 'arrow-up'|'bookmark'|'calendar'|'check-list'|'check'|'circled-check'|'clock-incomplete'
+    |'info'|'warning'|'success';
+  }
+
   interface SnowRailWarning {
     'label': string;
     'visible': boolean;
@@ -251,6 +260,7 @@ declare global {
     'UcSideDrawer': Components.UcSideDrawer;
     'DsApp': Components.DsApp;
     'SnowBuggy': Components.SnowBuggy;
+    'SnowIcon': Components.SnowIcon;
     'SnowRailWarning': Components.SnowRailWarning;
     'SnowRail': Components.SnowRail;
     'SnowToast': Components.SnowToast;
@@ -264,6 +274,7 @@ declare global {
     'uc-side-drawer': Components.UcSideDrawerAttributes;
     'ds-app': Components.DsAppAttributes;
     'snow-buggy': Components.SnowBuggyAttributes;
+    'snow-icon': Components.SnowIconAttributes;
     'snow-rail-warning': Components.SnowRailWarningAttributes;
     'snow-rail': Components.SnowRailAttributes;
     'snow-toast': Components.SnowToastAttributes;
@@ -312,6 +323,12 @@ declare global {
     new (): HTMLSnowBuggyElement;
   };
 
+  interface HTMLSnowIconElement extends Components.SnowIcon, HTMLStencilElement {}
+  var HTMLSnowIconElement: {
+    prototype: HTMLSnowIconElement;
+    new (): HTMLSnowIconElement;
+  };
+
   interface HTMLSnowRailWarningElement extends Components.SnowRailWarning, HTMLStencilElement {}
   var HTMLSnowRailWarningElement: {
     prototype: HTMLSnowRailWarningElement;
@@ -338,6 +355,7 @@ declare global {
     'uc-side-drawer': HTMLUcSideDrawerElement
     'ds-app': HTMLDsAppElement
     'snow-buggy': HTMLSnowBuggyElement
+    'snow-icon': HTMLSnowIconElement
     'snow-rail-warning': HTMLSnowRailWarningElement
     'snow-rail': HTMLSnowRailElement
     'snow-toast': HTMLSnowToastElement
@@ -351,6 +369,7 @@ declare global {
     'uc-side-drawer': HTMLUcSideDrawerElement;
     'ds-app': HTMLDsAppElement;
     'snow-buggy': HTMLSnowBuggyElement;
+    'snow-icon': HTMLSnowIconElement;
     'snow-rail-warning': HTMLSnowRailWarningElement;
     'snow-rail': HTMLSnowRailElement;
     'snow-toast': HTMLSnowToastElement;

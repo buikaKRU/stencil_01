@@ -9,12 +9,11 @@ No slots. Don't paste any content within tag
 
 ## Properties
 
-| Property          | Attribute     | Description                                                              | Type      | Default     |
-| ----------------- | ------------- | ------------------------------------------------------------------------ | --------- | ----------- |
-| `clicked`         | `clicked`     | Clicked event handler                                                    | `any`     | `undefined` |
-| `interactive`     | `interactive` | Interactivity: backdrop qould be weather blocking one or interactive one | `boolean` | `undefined` |
-| `qa` _(required)_ | `qa`          | QA required ID                                                           | `string`  | `undefined` |
-| `visible`         | `visible`     | visbility                                                                | `boolean` | `false`     |
+| Property          | Attribute | Description           | Type                          | Default     |
+| ----------------- | --------- | --------------------- | ----------------------------- | ----------- |
+| `qa` _(required)_ | `qa`      | QA required ID        | `string`                      | `undefined` |
+| `visible`         | `visible` | visbility             | `boolean`                     | `false`     |
+| `wcClicked`       | --        | Clicked event handler | `(event: MouseEvent) => void` | `undefined` |
 
 
 ## Methods

@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description                   | Type  | Default     |
-| -------- | --------- | ----------------------------- | ----- | ----------- |
-| `data`   | `data`    | Main property to get the data | `any` | `undefined` |
+| Property     | Attribute      | Description                             | Type     | Default     |
+| ------------ | -------------- | --------------------------------------- | -------- | ----------- |
+| `background` | `background`   | This is state: background description   | `string` | `'white'`   |
+| `wcDataProp` | `wc-data-prop` | Main property to get and store the data | `any`    | `undefined` |
 
 
 ## CSS Custom Properties
