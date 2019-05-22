@@ -209,11 +209,17 @@ export namespace Components {
   }
 
   interface SnowIcon {
+    /**
+    * Property responsible for displaying needed icon
+    */
     'wcVariant': 'arrow-up'|'bookmark'|'calendar'|'check-list'|'check'|'circled-check'|'clock-incomplete'
     |'info'|'warning'|'success';
   }
   interface SnowIconAttributes extends StencilHTMLAttributes {
-    'wcVariant'?: 'arrow-up'|'bookmark'|'calendar'|'check-list'|'check'|'circled-check'|'clock-incomplete'
+    /**
+    * Property responsible for displaying needed icon
+    */
+    'wcVariant': 'arrow-up'|'bookmark'|'calendar'|'check-list'|'check'|'circled-check'|'clock-incomplete'
     |'info'|'warning'|'success';
   }
 

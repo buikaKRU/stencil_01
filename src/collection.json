@@ -1,5 +1,5 @@
 {
-  "timestamp": "2019-05-22T14:50:42",
+  "timestamp": "2019-05-22T16:04:24",
   "compiler": {
     "name": "@stencil/core",
     "version": "0.16.2",
@@ -432,23 +432,30 @@
     },
     {
       "tag": "snow-icon",
-      "docs": "",
+      "readme": "# snow-icon\n\nSome test description just to test\n",
+      "docs": "designated to display snow icons",
       "usage": {},
       "props": [
         {
           "name": "wcVariant",
           "type": "\"arrow-up\" | \"bookmark\" | \"calendar\" | \"check\" | \"check-list\" | \"circled-check\" | \"clock-incomplete\" | \"info\" | \"success\" | \"warning\"",
-          "mutable": false,
+          "mutable": true,
           "attr": "wc-variant",
-          "reflectToAttr": false,
-          "docs": "",
+          "reflectToAttr": true,
+          "docs": "Property responsible for displaying needed icon",
           "optional": false,
-          "required": false
+          "required": true
         }
       ],
       "methods": [],
       "events": [],
-      "styles": []
+      "styles": [
+        {
+          "name": "--color-black",
+          "annotation": "prop",
+          "docs": "black color"
+        }
+      ]
     },
     {
       "tag": "snow-rail-warning",

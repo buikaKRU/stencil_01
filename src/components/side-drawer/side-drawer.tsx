@@ -133,7 +133,8 @@ export class SideDrawer {
             <div class="uc-SideDrawer">
                 {content}
             </div>,
-            <uc-backdrop 
+            <snow-icon wcVariant='warning'></snow-icon>,
+            <uc-backdrop
                 id='uc-test'
                 qa="qa-12345" 
                 visible={this.visible}

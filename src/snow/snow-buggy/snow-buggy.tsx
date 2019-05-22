@@ -9,8 +9,7 @@ import { Component, Prop } from '@stencil/core';
 export class MyComponent {
 
 
-  @Prop({mutable: true, reflectToAttr: true})
-    visible = 1;
+  @Prop({mutable: true, reflectToAttr: true}) visible = 1;
 
 
 
@@ -23,7 +22,7 @@ export class MyComponent {
                 <p>
                   <svg><use href="assets/images/test.svg#circle"></use></svg>
                   <svg><use href="assets/images/test.svg#ellipse"></use></svg>
-                  <svg><use href="assets/images/svgstoreicons.svg#trash"></use></svg>
+                  <svg><use href="assets/images/test.svg#"></use></svg>
                 </p>
                     <h1>the buggy component</h1>
                     <slot></slot>

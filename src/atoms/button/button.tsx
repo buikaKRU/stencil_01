@@ -155,6 +155,7 @@ export class Button {
             onClick={this.clicked}
             disabled={this.disabled}>
                 {this.buttonlabel}
+                <snow-icon wcVariant='success'></snow-icon>
             </button>
     }
 }
